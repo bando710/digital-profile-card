@@ -9,6 +9,7 @@ This project creates an interactive, customizable digital profile card using Rea
 - Customizable name, subtitle, and social media links
 - Responsive design that looks great on all devices
 - Interactive hover effects on social media icons
+- Built with React and Tailwind CSS for easy customization
 
 ## Getting Started
 
@@ -30,25 +31,9 @@ This project creates an interactive, customizable digital profile card using Rea
 
 4. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-### Changing the Site Title
-
-To change the title of your site (the text that appears in the browser tab):
-
-1. Open the `public/index.html` file.
-2. Look for the `<title>` tag in the `<head>` section.
-3. Replace the content between the `<title>` tags with your desired site title.
-
-For example:
-
-```html
-<title>John Doe's Digital Profile</title>
-```
-
-4. Save the file. The new title will be used when you next start your development server or build your project.
-
 ## Customizing Your Profile Card
 
-All customizations are done in the `src/config/digitalProfileConfig.js` file. Here's how to customize each aspect of your profile card:
+All customizations are done in the `src/config/digitalProfileConfig.js` file.
 
 ### Basic Information
 
@@ -77,18 +62,6 @@ export const digitalProfileConfig = {
 
 Uncomment and set the `profileImage` to use a profile picture. If not set, the card will display your initials.
 
-Changing the Site Title
-To change the title of your site (the text that appears in the browser tab):
-
-Open the public/index.html file.
-Look for the <title> tag in the <head> section.
-Replace the content between the <title> tags with your desired site title.
-
-For example:
-htmlCopy<title>John Doe's Digital Profile</title>
-
-Save the file. The new title will be used when you next start your development server or build your project.
-
 ### Colors
 
 ```javascript
@@ -110,55 +83,62 @@ export const digitalProfileConfig = {
   - `from`: The starting color of the gradient
   - `to`: The ending color of the gradient
 
-### Social Links
+## Social Links and Icons
+
+This project uses Lucide React for icons, which provides a wide range of consistent and beautifully designed icons, including many popular social media platforms.
+
+### Available Social Media Icons
+
+Lucide React includes icons for many popular social media platforms. Here are some commonly used ones:
+
+- Github
+- Linkedin
+- Twitter
+- Facebook
+- Instagram
+- Youtube
+- Twitch
+- Dribbble
+- Figma
+- Codepen
+
+### Using Social Icons
+
+To use these icons in your Digital Profile Card, update the `socialLinks` array in your `src/config/digitalProfileConfig.js` file:
 
 ```javascript
 export const digitalProfileConfig = {
-  // ...
+  // ...other config options
   socialLinks: [
-    { icon: 'Mail', url: "mailto:you@example.com", label: "Email" },
-    { icon: 'Linkedin', url: "https://linkedin.com/in/yourusername", label: "LinkedIn" },
     { icon: 'Github', url: "https://github.com/yourusername", label: "GitHub" },
+    { icon: 'Linkedin', url: "https://linkedin.com/in/yourusername", label: "LinkedIn" },
+    { icon: 'Twitter', url: "https://twitter.com/yourusername", label: "Twitter" },
+    { icon: 'Instagram', url: "https://instagram.com/yourusername", label: "Instagram" },
     // Add more social links as needed
   ],
-  // ...
 };
 ```
 
-Each social link object contains:
-- `icon`: The name of the icon (from Lucide React icons)
-- `url`: The URL to your profile on that platform
-- `label`: A label for the icon (used for accessibility)
+The `icon` property should match the name of the Lucide icon you want to use.
 
-## Available Icons
+### Additional Icons
 
-This project uses Lucide React icons. You can find a list of available icons in the [Lucide documentation](https://lucide.dev/icons/).
+For a full list of available icons, visit the [Lucide Icons Gallery](https://lucide.dev/icons/). You can use any of these icons in your social links or elsewhere in your Digital Profile Card.
 
-## Adding Custom Icons
+If you need an icon for a platform that's not included in Lucide React, consider using a generic icon (like `Link` or `ExternalLink`) and relying on the `label` property to specify the platform.
 
-To add a custom icon not included in Lucide React:
+## Changing the Site Title
 
-1. Open `src/config/digitalProfileConfig.js`
-2. Add your custom SVG icon to the `customIcons` object:
+To change the title of your site (the text that appears in the browser tab):
 
-```javascript
-const customIcons = {
-  MyCustomIcon: (props) => (
-    <svg {...props} viewBox="0 0 24 24" fill="currentColor">
-      {/* Your SVG path here */}
-    </svg>
-  ),
-  // Add more custom icons as needed
-};
-```
+1. Open the `public/index.html` file.
+2. Look for the `<title>` tag in the `<head>` section.
+3. Replace the content between the `<title>` tags with your desired site title.
 
-3. Use your custom icon in the `socialLinks` array:
+For example:
 
-```javascript
-socialLinks: [
-  // ...
-  { icon: 'MyCustomIcon', url: "https://example.com", label: "My Custom Link" },
-],
+```html
+<title>John Doe's Digital Profile</title>
 ```
 
 ## Building for Production

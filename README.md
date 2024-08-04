@@ -30,6 +30,22 @@ This project creates an interactive, customizable digital profile card using Rea
 
 4. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
+### Changing the Site Title
+
+To change the title of your site (the text that appears in the browser tab):
+
+1. Open the `public/index.html` file.
+2. Look for the `<title>` tag in the `<head>` section.
+3. Replace the content between the `<title>` tags with your desired site title.
+
+For example:
+
+```html
+<title>John Doe's Digital Profile</title>
+```
+
+4. Save the file. The new title will be used when you next start your development server or build your project.
+
 ## Customizing Your Profile Card
 
 All customizations are done in the `src/config/digitalProfileConfig.js` file. Here's how to customize each aspect of your profile card:
@@ -72,22 +88,6 @@ For example:
 htmlCopy<title>John Doe's Digital Profile</title>
 
 Save the file. The new title will be used when you next start your development server or build your project.
-
-### Changing the Site Title
-
-To change the title of your site (the text that appears in the browser tab):
-
-1. Open the `public/index.html` file.
-2. Look for the `<title>` tag in the `<head>` section.
-3. Replace the content between the `<title>` tags with your desired site title.
-
-For example:
-
-```html
-<title>John Doe's Digital Profile</title>
-```
-
-4. Save the file. The new title will be used when you next start your development server or build your project.
 
 ### Colors
 

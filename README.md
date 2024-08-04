@@ -61,6 +61,34 @@ export const digitalProfileConfig = {
 
 Uncomment and set the `profileImage` to use a profile picture. If not set, the card will display your initials.
 
+Changing the Site Title
+To change the title of your site (the text that appears in the browser tab):
+
+Open the public/index.html file.
+Look for the <title> tag in the <head> section.
+Replace the content between the <title> tags with your desired site title.
+
+For example:
+htmlCopy<title>John Doe's Digital Profile</title>
+
+Save the file. The new title will be used when you next start your development server or build your project.
+
+### Changing the Site Title
+
+To change the title of your site (the text that appears in the browser tab):
+
+1. Open the `public/index.html` file.
+2. Look for the `<title>` tag in the `<head>` section.
+3. Replace the content between the `<title>` tags with your desired site title.
+
+For example:
+
+```html
+<title>John Doe's Digital Profile</title>
+```
+
+4. Save the file. The new title will be used when you next start your development server or build your project.
+
 ### Colors
 
 ```javascript

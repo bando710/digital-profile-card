@@ -78,7 +78,7 @@ export const digitalProfileConfig = {
 
 - `backgroundColor`: The background color of the card [(Tailwind CSS class)](https://tailwindcss.com/docs/background-color)
 - `textColor`: The color of the text on the card [(Tailwind CSS class)](https://tailwindcss.com/docs/text-color)
-- `headerGradient`: The gradient colors for the header | Use the [link](https://tailwindcss.com/docs/background-color) for `backgroundColor`
+- `headerGradient`: The gradient colors for the header | [link](https://tailwindcss.com/docs/background-color)
   - `from`: The starting color of the gradient
   - `to`: The ending color of the gradient
 

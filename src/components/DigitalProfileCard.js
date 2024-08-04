@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useMemo } from 'react';
+import React from 'react';
 import { digitalProfileConfig, allIcons } from '../config/digitalProfileConfig';
 
 const ProfileImage = React.memo(({ profileImage, initials, backgroundColor }) => {
@@ -19,40 +19,30 @@ const SocialIcon = React.memo(({ icon, url, label, textColor }) => {
   if (!IconComponent) return null;
   
   return (
-    <a href={url} target="_blank" rel="noopener noreferrer" title={label}>
-      <IconComponent className={textColor} size={24} />
+    <a 
+      href={url} 
+      target="_blank" 
+      rel="noopener noreferrer" 
+      title={label}
+      className={`
+        ${textColor} hover:text-opacity-80 
+        transform transition-all duration-200 ease-in-out 
+        hover:scale-110 focus:scale-110 
+        hover:shadow-lg focus:shadow-lg
+        rounded-full p-2 
+        focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white
+      `}
+    >
+      <IconComponent size={24} />
     </a>
   );
 });
 
 const DigitalProfileCard = () => {
-  const [position, setPosition] = useState({ x: 0.5, y: 0.5 });
-
-  const handleMouseMove = useCallback((e) => {
-    const card = e.currentTarget;
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    
-    setPosition({ x: x / rect.width, y: y / rect.height });
-  }, []);
-
-  const handleMouseLeave = useCallback(() => {
-    setPosition({ x: 0.5, y: 0.5 });
-  }, []);
-
-  const cardStyle = useMemo(() => ({
-    transform: `perspective(1000px) rotateY(${(position.x - 0.5) * 10}deg) rotateX(${(0.5 - position.y) * 10}deg)`,
-    transition: 'transform 0.1s',
-  }), [position]);
-
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-900 p-4">
       <div 
-        className={`w-full max-w-sm ${digitalProfileConfig.backgroundColor} rounded-xl shadow-xl overflow-hidden cursor-pointer`}
-        style={cardStyle}
-        onMouseMove={handleMouseMove}
-        onMouseLeave={handleMouseLeave}
+        className={`w-full max-w-sm ${digitalProfileConfig.backgroundColor} rounded-xl shadow-xl overflow-hidden`}
       >
         <div className="flex flex-col items-center justify-center p-6 space-y-4">
           <ProfileImage

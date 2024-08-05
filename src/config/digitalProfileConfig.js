@@ -20,11 +20,11 @@ export const digitalProfileConfig = {
     to: "to-purple-500",
   },
   socialLinks: [
-    { icon: 'Mail', url: "mailto:john@example.com", label: "Email" },
-    { icon: 'Linkedin', url: "https://linkedin.com/in/johndoe", label: "LinkedIn" },
-    { icon: 'Github', url: "https://github.com/johndoe", label: "GitHub" },
-    { icon: 'Twitter', url: "https://twitter.com/johndoe", label: "Twitter" },
-    { icon: 'Instagram', url: "https://instagram.com/johndoe", label: "Instagram" },
+    { icon: 'Mail', url: "mailto: ", label: "Email" },
+    { icon: 'Linkedin', url: " ", label: "LinkedIn" },
+    { icon: 'Github', url: " ", label: "GitHub" },
+    { icon: 'Twitter', url: " ", label: "Twitter" },
+    { icon: 'Instagram', url: " ", label: "Instagram" },
     // Add or remove social links as needed
   ],
 };

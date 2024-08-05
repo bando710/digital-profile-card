@@ -186,11 +186,3 @@ You can deploy this app to any static site hosting service. Some popular options
 - [GitHub Pages](https://pages.github.com/)
 
 Follow the deployment instructions for your chosen platform.
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## License
-
-This project is open source and available under the [MIT License](LICENSE).

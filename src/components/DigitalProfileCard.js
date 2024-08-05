@@ -48,7 +48,7 @@ const DigitalProfileCard = () => {
   } = digitalProfileConfig;
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-900 p-4">
+    <div className="flex justify-center items-center min-h-screen bg-amber-500 p-4">
       <div 
         className={`w-full max-w-sm ${backgroundColor} rounded-2xl shadow-2xl overflow-hidden`}
       >

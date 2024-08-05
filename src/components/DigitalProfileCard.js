@@ -42,13 +42,21 @@ const DigitalProfileCard = () => {
   const { 
     name, 
     subtitle, 
+    profileImage,
+    initials,
     backgroundColor, 
     textColor, 
-    headerGradient 
+    headerGradient,
+    socialLinks,
+    siteBackground
   } = digitalProfileConfig;
 
+  const backgroundClass = siteBackground.type === 'gradient'
+    ? `${siteBackground.gradient.direction} ${siteBackground.gradient.from} ${siteBackground.gradient.to}`
+    : siteBackground.color;
+
   return (
-    <div className="flex justify-center items-center min-h-screen bg-amber-500 p-4">
+    <div className={`flex justify-center items-center min-h-screen p-4 ${backgroundClass}`}>
       <div 
         className={`w-full max-w-sm ${backgroundColor} rounded-2xl shadow-2xl overflow-hidden`}
       >
@@ -56,9 +64,9 @@ const DigitalProfileCard = () => {
           <div className={`h-24 bg-gradient-to-r ${headerGradient.from} ${headerGradient.to}`}></div>
           <div className="absolute -bottom-10 inset-x-0 flex justify-center">
             <ProfileImage
-              profileImage={digitalProfileConfig.profileImage}
-              initials={digitalProfileConfig.initials}
-              backgroundColor={digitalProfileConfig.backgroundColor}
+              profileImage={profileImage}
+              initials={initials}
+              backgroundColor={backgroundColor}
             />
           </div>
         </div>
@@ -68,7 +76,7 @@ const DigitalProfileCard = () => {
             {subtitle && <p className={`${textColor} text-opacity-80 text-sm mt-1`}>{subtitle}</p>}
           </div>
           <div className="flex flex-wrap justify-center gap-3">
-            {digitalProfileConfig.socialLinks.map((link, index) => (
+            {socialLinks.map((link, index) => (
               <SocialIcon
                 key={index}
                 icon={link.icon}

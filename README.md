@@ -10,6 +10,7 @@ This project creates an interactive, customizable digital profile card using Rea
 - Responsive design that looks great on all devices
 - Interactive hover effects on social media icons
 - Built with React and Tailwind CSS for easy customization
+- Customizable site background
 
 ## Getting Started
 
@@ -79,9 +80,34 @@ export const digitalProfileConfig = {
 
 - `backgroundColor`: The background color of the card [(Tailwind CSS class)](https://tailwindcss.com/docs/background-color)
 - `textColor`: The color of the text on the card [(Tailwind CSS class)](https://tailwindcss.com/docs/text-color)
-- `headerGradient`: The gradient colors for the header | [link](https://tailwindcss.com/docs/background-color)
+- `headerGradient`: The gradient colors for the header
   - `from`: The starting color of the gradient
   - `to`: The ending color of the gradient
+
+### Site Background
+
+You can customize the background of the entire site:
+
+```javascript
+export const digitalProfileConfig = {
+  // ... other config options ...
+  siteBackground: {
+    type: 'color', // or 'gradient'
+    color: 'bg-gray-900', // Tailwind CSS color class
+    gradient: {
+      from: 'from-gray-900',
+      to: 'to-gray-800',
+      direction: 'bg-gradient-to-r' // Options: bg-gradient-to-r, bg-gradient-to-b, etc.
+    }
+  },
+};
+```
+
+- For a solid color background, set `type` to `'color'` and specify the `color` using a Tailwind CSS class.
+- For a gradient background, set `type` to `'gradient'` and configure the `gradient` object.
+  - `from`: Starting color class
+  - `to`: Ending color class
+  - `direction`: Gradient direction (e.g., `'bg-gradient-to-r'` for right, `'bg-gradient-to-b'` for bottom)
 
 ## Social Links and Icons
 

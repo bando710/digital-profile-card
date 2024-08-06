@@ -11,17 +11,6 @@ This project creates an interactive, customizable digital profile card using Rea
 - Interactive 3D hover effect for enhanced user engagement
 - Built with React and Tailwind CSS for easy customization
 
-## New Feature: Interactive 3D Effect
-
-Our digital profile cards now come with an engaging 3D hover effect! As users move their cursor over the card, it subtly tilts and moves, creating a dynamic, interactive experience. This feature:
-
-- Adds a premium, high-tech feel to your digital presence
-- Increases user engagement with your profile information
-- Works smoothly across various devices and browsers
-- Provides a memorable interaction that sets your card apart
-
-The 3D effect is carefully tuned to enhance the user experience without distracting from your professional information.
-
 ## Getting Started
 
 1. Clone this repository:

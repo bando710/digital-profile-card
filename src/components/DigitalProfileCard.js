@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { digitalProfileConfig, allIcons } from '../config/digitalProfileConfig';
 
 const ProfileImage = React.memo(({ profileImage, initials, backgroundColor }) => {
@@ -39,6 +39,20 @@ const SocialIcon = React.memo(({ icon, url, label, textColor }) => {
 });
 
 const DigitalProfileCard = () => {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  
+  const handleMouseMove = (e) => {
+    const card = e.currentTarget;
+    const rect = card.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width;
+    const y = (e.clientY - rect.top) / rect.height;
+    setMousePosition({ x, y });
+  };
+
+  const handleMouseLeave = () => {
+    setMousePosition({ x: 0.5, y: 0.5 });
+  };
+
   const { 
     name, 
     subtitle, 
@@ -51,6 +65,16 @@ const DigitalProfileCard = () => {
     siteBackground
   } = digitalProfileConfig;
 
+  const cardStyle = {
+    transform: `
+      perspective(1000px) 
+      rotateX(${(mousePosition.y - 0.5) * 10}deg) 
+      rotateY(${(mousePosition.x - 0.5) * -10}deg)
+      translateZ(20px)
+    `,
+    transition: 'transform 0.1s ease-out',
+  };
+
   const backgroundClass = siteBackground.type === 'gradient'
     ? `${siteBackground.gradient.direction} ${siteBackground.gradient.from} ${siteBackground.gradient.to}`
     : siteBackground.color;
@@ -58,7 +82,10 @@ const DigitalProfileCard = () => {
   return (
     <div className={`flex justify-center items-center min-h-screen p-4 ${backgroundClass}`}>
       <div 
-        className={`w-full max-w-sm ${backgroundColor} rounded-2xl shadow-2xl overflow-hidden`}
+        className={`w-full max-w-sm ${backgroundColor} rounded-2xl shadow-2xl overflow-hidden cursor-pointer`}
+        style={cardStyle}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
       >
         <div className="relative">
           <div className={`h-24 bg-gradient-to-r ${headerGradient.from} ${headerGradient.to}`}></div>

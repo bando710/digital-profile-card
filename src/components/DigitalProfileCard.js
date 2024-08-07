@@ -72,7 +72,7 @@ const DigitalProfileCard = () => {
       rotateY(${(mousePosition.x - 0.5) * -10}deg)
       translateZ(20px)
     `,
-    transition: 'transform 0.1s ease-out',
+    transition: 'transform 0.5s ease-out',
   };
 
   const backgroundClass = siteBackground.type === 'gradient'

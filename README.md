@@ -8,9 +8,8 @@ This project creates an interactive, customizable digital profile card using Rea
 - Profile image support (falls back to initials if no image is provided)
 - Customizable name, subtitle, and social media links
 - Responsive design that looks great on all devices
-- Interactive hover effects on social media icons
+- Interactive 3D hover effect for enhanced user engagement
 - Built with React and Tailwind CSS for easy customization
-- Customizable site background
 
 ## Getting Started
 

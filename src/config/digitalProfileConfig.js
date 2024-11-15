@@ -31,6 +31,7 @@ export const digitalProfileConfig = {
   socialLinks: [
     { icon: 'Mail', url: "mailto: ", label: "Email" },
     { icon: 'Linkedin', url: " ", label: "LinkedIn" },
+    { icon: 'Github', url: " ", label: "Github" },
     { icon: 'Twitter', url: " ", label: "Twitter" },
     { icon: 'Instagram', url: " ", label: "Instagram" },
     // Add or remove social links as needed
